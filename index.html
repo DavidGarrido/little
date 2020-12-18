@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Explorerz</title>
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
+</head>
+
+<body class="bg-blue-500">
+    <div class="w-5 h-5 fixed z-50 bottom-0 right-0 bg-yellow-300 sm:bg-red-500 md:bg-purple-600 lg:bg-pink-600 xl:bg-green-500"></div>
+    <nav class="w-full md:flex justify-end p-3 text-white fixed top-0 right-0 z-50 hidden bg-gray-200">
+        <ul class="flex h-12 gap-3 roboto">
+            <li class="bg-blue-500 flex items-center px-3 cursor-pointer hover:underline">
+                <a href="#inicio">Inicio</a>
+            </li>
+            <li class="bg-blue-500 flex items-center px-3 cursor-pointer hover:underline">
+                <a href="#inicio">Aula Virtual</a>
+            </li>
+            <li class="bg-blue-500 flex items-center px-3 cursor-pointer hover:underline">
+                <a href="#cursos_little">Cursos</a>
+            </li>
+            <li class="bg-blue-500 flex items-center px-3 cursor-pointer hover:underline">Eventos</li>
+            <li class="bg-blue-500 flex items-center px-3 cursor-pointer hover:underline">
+                <a href="#methods">Métodos</a>
+            </li>
+            <li class="bg-blue-500 flex items-center px-3 cursor-pointer hover:underline">
+                <a href="#querys">Preguntas</a>
+            </li>
+            <li class="bg-blue-500 flex items-center px-3 cursor-pointer hover:underline">Canal de Telegram</li>
+            <li class="bg-blue-500 flex items-center px-3 cursor-pointer hover:underline">
+                <a href="#contacto">Contátenos</a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="fixed top-3 right-3 bg-white rounded-md w-12 h-12 z-50 md:hidden overflow-visible"
+        x-data="{open:false}">
+        <div class="w-full h-full bg-yellow-500 cursor-pointer rounded-md" @click=" open = true"></div>
+        <div class="fixed z-40 inset-0 bg-blue-500 flex justify-center items-center" x-show="open">
+            <div class="absolute top-3 right-3 w-12 h-12 rounded-md bg-green-500 cursor-pointer" @click="open=false">
+            </div>
+            <ul class="flex flex-col items-center gap-3 roboto text-white">
+                <li class="bg-blue-500 flex items-center px-3 cursor-pointer hover:underline" @click="open=false">
+                    <a href="#inicio">Inicio</a>
+                </li>
+                <li class="bg-blue-500 flex items-center px-3 cursor-pointer hover:underline" @click="open=false">
+                    <a href="#aula">Aula Virtual</a>
+                </li>
+                <li class="bg-blue-500 flex items-center px-3 cursor-pointer hover:underline" @click="open=false">
+                    <a href="#cursos_little">Cursos</a>
+                </li>
+                <li class="bg-blue-500 flex items-center px-3 cursor-pointer hover:underline" @click="open=false">
+                    <a href="#events">Eventos</a>
+                </li>
+                <li class="bg-blue-500 flex items-center px-3 cursor-pointer hover:underline" @click="open=false">
+                    <a href="#methods">Métodos</a>
+                </li>
+                <li class="bg-blue-500 flex items-center px-3 cursor-pointer hover:underline" @click="open=false">
+                    <a href="#querys">Preguntas</a>
+                </li>
+                <li class="bg-blue-500 flex items-center px-3 cursor-pointer hover:underline" @click="open=false">Canal
+                    de Telegram</li>
+                <li class="bg-blue-500 flex items-center px-3 cursor-pointer hover:underline" @click="open=false">
+                    <a href="#contacto">Contátenos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 grid-rows-3 lg:grid-rows-1  md:pt-20 text-white bg-cover flex-wrap p-1"  id="inicio">
+        <div class="relative md:col-span-2 lg:col-span-2 xl:col-span-3 row-span-1 bg-cover bg-center overflow-hidden h-full sm:h-96 lg:h-full rounded-tl-lg lg:rounded-bl-lg rounded-tr-lg lg:rounded-tr-none" style="background-image: url('./img/colegio.jpg');">
+            <div class="absolute inset-0 bg-black bg-opacity-50">
+                <img src="./img/logo_vector.png" width="150px" alt="explorerz educational solutions logo" class="m-10">
+            </div>
+        </div>
+        <div class="md:col-span-2 lg:col-span-1 xl:col-span-1 row-span-2  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 grid-rows-3 sm:grid-rows-1 lg:grid-rows-3 rounded-bl-lg lg:rounded-bl-none lg:rounded-tr-lg rounded-br-lg overflow-hidden"  id="aula">
+            <div class="row-span-1">
+                <img src="./img/banner_aula.jpg" alt="aula virtual banner" class="w-full h-full object-cover">
+            </div>
+            <div class="bg-white p-3 text-gray-600 flex flex-col justify-between gap-5 row-span-2 sm:row-span-1 lg:row-span-2">
+                <div>
+                    <p class="font-bold text-2xl">Matriculas Permanentes</p>
+                    <ul class="list-disc px-10">
+                        <li>Acceso 24/7.</li>
+                        <li>Control de Actividades.</li>
+                        <li>Interacción entre Alumnos.</li>
+                        <li>Comunicación directa con Tutores.</li>
+                        <li>Notificacíon de alertas.</li>
+                        <li>Seguimiento del proceso educativo por directivos, docentes, padres y alumnos.</li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-2 text-gray-400">
+                    <p class="text-xs">El acceso a la plataforma va dirigido a personas vinculadas con la institución.</p>
+                    <p class="text-xs">Puedes iniciar tu vinculación haciendo el registro y solicitando el acceso dependiendo tu rol.</p>
+                    <button class="bg-blue-500 text-white rounded-lg p-5">Solicitar Acceso!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-full flex flex-col items-center p-5 pt-20" id="cursos_little">
+        <h1 class=" text-white text-4xl font-bold uppercase">Cursos Little</h1>
+        <div class="flex w-full p-3 xl:px-20">
+            <ul class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-5 text-gray-600">
+                <li class="bg-white rounded-lg overflow-hidden relative" x-data="{open:false}">
+                    <div class=" w-full pt-full bg-center bg-cover" style="background-image: url('./img/care.jpg')">
+                    </div>
+                    <div class="p-2">
+                        <p class="font-bold text-center">GUARDERIA / BABY CARE</p>
+                        <a class="w-full flex justify-center" href="#" @click.prevent="open=true">Ver mas</a>
+                        <div x-show="open" class="fixed bg-black bg-opacity-20 inset-0 z-50 flex items-center justify-center p-5">
+                            <div class="w-full md:w-1/2 bg-white p-3 rounded-lg shadow-xl grid grid-cols-1 lg:grid-cols-2" @click.away="open=false">
+                                <div class="w-full pt-full bg-cover bg-center" style="background-image: url('./img/care.jpg');"></div>
+                                <div class="p-2 flex flex-col gap-3 justify-between">
+                                    <p class="font-bold text-center">GUARDERIA / BABY CARE</p>
+                                    <p>A partir de los 4 meses</p>
+                                    <p>Para nosotros es muy importante el bienestar y el desarrollo de sus hijos, por lo cual hemos creado una serie de actividades con el fin de estimular y afianzar el desarrollo físico y cognitivo de sus hijos.</p>
+                                    <button class="p-3 text-white bg-blue-500 rounded-lg w-full">Inscripción</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="bg-white rounded-lg overflow-hidden relative" x-data="{open:false}">
+                    <div class=" w-full    pt-full bg-center bg-cover" style="background-image: url('./img/early.jpg')">
+                    </div>
+                    <div class="p-2 ">
+                        <p class="font-bold text-center">ESTIMULACIÓN TEMPRANA/Early stimulation</p>
+                        <a class="w-full flex justify-center" href="#" @click.prevent="open=true">Ver mas</a>
+                        <div x-show="open" class="fixed bg-black bg-opacity-20 inset-0 z-50 flex items-center justify-center p-5">
+                            <div class="w-full md:w-1/2 bg-white p-3 rounded-lg shadow-xl grid grid-cols-1 lg:grid-cols-2" @click.away="open=false">
+                                <div class="w-full pt-full bg-cover bg-center" style="background-image: url('./img/early.jpg');"></div>
+                                <div class="p-2 flex flex-col gap-3 justify-between">
+                                    <p class="font-bold text-center">ESTIMULACIÓN TEMPRANA/Early stimulation</p>
+                                    <p>A partir de los 4 meses</p>
+                                    <p>¿Qué es? La estimulación temprana es el conjunto de técnicas, y actividades aplicada en forma sistemática y secuencial. Se emplea en niñas/niños desde su nacimiento hasta los 6 años, el objetivo de la estimulación temprana es que, mediante la realización de una serie de actividades estimulantes, el niño desarrolle e incremente su autonomía e independencia. De la misma manera, se pueden conseguir grandes avances en el desarrollo físico, cognitivo, las habilidades de comunicación y el aspecto sensorial.</p>
+                                    <p>En Little Explorerz lo que buscamos con nuestros talleres es potencializar el desarrollo de los sentidos internos (vestibular, kinestésico – corporal y cenestésico) y también los sentidos externos (visión, oído, gusto, olfato y tacto) a través de experiencias únicas junto a su familia, y contando con el acompañamiento de especialistas en estimulación temprana y pedagogía infantil.</p>
+                                    <button class="p-3 text-white bg-blue-500 rounded-lg w-full">Inscripción</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="bg-white rounded-lg overflow-hidden relative" x-data="{open:false}">
+                    <div class=" w-full    pt-full bg-center bg-cover"
+                        style="background-image: url('./img/walkers.jpg')">
+                    </div>
+                    <div class="p-2">
+                        <p class="font-bold text-center">CAMINADORES/Walkers</p>
+                        <a class="w-full flex justify-center" href="#" @click.prevent="open=true">Ver mas</a>
+                        <div x-show="open" class="fixed bg-black bg-opacity-20 inset-0 z-50 flex items-center justify-center p-5">
+                            <div class="w-full md:w-1/2 bg-white p-3 rounded-lg shadow-xl grid grid-cols-1 lg:grid-cols-2" @click.away="open=false">
+                                <div class="w-full pt-full bg-cover bg-center" style="background-image: url('./img/walkers.jpg');"></div>
+                                <div class="p-2 flex flex-col gap-3 justify-between">
+                                    <p class="font-bold text-center">CAMINADORES/Walkers</p>
+                                    <p>18 a 24 meses</p>
+                                    <p>Esta etapa nos permite estimular y fortalecer los vínculos afectivos con nuestros padres, profesoras y pares, por medio de la exploración y la sensibilización. Iniciamos el afianzamiento de nuestras habilidades sociales, comunicativas y motoras, proporcionándoles seguridad.</p>
+                                    <button class="p-3 text-white bg-blue-500 rounded-lg w-full">Inscripción</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="bg-white rounded-lg overflow-hidden relative" x-data="{open:false}">
+                    <div class=" w-full    pt-full bg-center bg-cover"
+                        style="background-image: url('./img/parvulos.jpg')">
+                    </div>
+                    <div class="p-2">
+                        <p class="font-bold text-center">PÁRVULOS/Kindergartens</p>
+                        <a class="w-full flex justify-center" href="#" @click.prevent="open=true">Ver mas</a>
+                        <div x-show="open" class="fixed bg-black bg-opacity-20 inset-0 z-50 flex items-center justify-center p-5">
+                            <div class="w-full md:w-1/2 bg-white p-3 rounded-lg shadow-xl grid grid-cols-1 lg:grid-cols-2" @click.away="open=false">
+                                <div class="w-full pt-full bg-cover bg-center" style="background-image: url('./img/parvulos.jpg');"></div>
+                                <div class="p-2 flex flex-col gap-3 justify-between">
+                                    <p class="font-bold text-center">PÁRVULOS/Kindergartens</p>
+                                    <p>2 a 3 años</p>
+                                    <p>Empezamos a explorar el mundo que nos rodea, con nuestros sentidos y preguntamos muchas cosas. Experimentamos cambios emocionales, sociales e intelectuales que nos ayudan a entender nuestro entorno.</p>
+                                    <button class="p-3 text-white bg-blue-500 rounded-lg w-full">Inscripción</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="bg-white rounded-lg overflow-hidden relative" x-data="{open:false}">
+                    <div class=" w-full    pt-full bg-center bg-cover"
+                        style="background-image: url('./img/prekinder.jpg')">
+                    </div>
+                    <div class="p-2">
+                        <p class="font-bold text-center">PRE-KINDER</p>
+                        <a class="w-full flex justify-center" href="#" @click.prevent="open=true">Ver mas</a>
+                        <div x-show="open" class="fixed bg-black bg-opacity-20 inset-0 z-50 flex items-center justify-center p-5">
+                            <div class="w-full md:w-1/2 bg-white p-3 rounded-lg shadow-xl grid grid-cols-1 lg:grid-cols-2" @click.away="open=false">
+                                <div class="w-full pt-full bg-cover bg-center" style="background-image: url('./img/prekinder.jpg');"></div>
+                                <div class="p-2 flex flex-col gap-3 justify-between">
+                                    <p class="font-bold text-center">PRE-KINDER</p>
+                                    <p>3 a 4 años</p>
+                                    <p>Aquí, empezamos nuestro conocimiento de la educación inicial, adquirimos nuevos aprendizajes que nos permiten desarrollar diferentes habilidades tanto en nuestra lengua materna como en un idioma extranjero; interactuamos con muchas herramientas a través del juego…construimos…aprendemos.</p>
+                                    <button class="p-3 text-white bg-blue-500 rounded-lg w-full">Inscripción</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="bg-white rounded-lg overflow-hidden relative" x-data="{open:false}">
+                    <div class=" w-full    pt-full bg-center bg-cover"
+                        style="background-image: url('./img/kinder.jpg')">
+                    </div>
+                    <div class="p-2">
+                        <p class="font-bold text-center">KINDER</p>
+                        <a class="w-full flex justify-center" href="#" @click.prevent="open=true">Ver mas</a>
+                        <div x-show="open" class="fixed bg-black bg-opacity-20 inset-0 z-50 flex items-center justify-center p-5">
+                            <div class="w-full md:w-1/2 bg-white p-3 rounded-lg shadow-xl grid grid-cols-1 lg:grid-cols-2" @click.away="open=false">
+                                <div class="w-full pt-full bg-cover bg-center" style="background-image: url('./img/kinder.jpg');"></div>
+                                <div class="p-2 flex flex-col gap-3 justify-between">
+                                    <p class="font-bold text-center">KINDER</p>
+                                    <p>4 a 5 años</p>
+                                    <p>En esta etapa, fundamentamos los procesos de los anteriores niveles: enfatizamos el desarrollo del lenguaje escrito y oral y también jugamos a aprender con las matemáticas; proponiendo, imaginando y experimentando con nuestras capacidades.</p>
+                                    <button class="p-3 text-white bg-blue-500 rounded-lg w-full">Inscripción</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="bg-white rounded-lg overflow-hidden relative" x-data="{open:false}">
+                    <div class=" w-full    pt-full bg-center bg-cover"
+                        style="background-image: url('./img/elementary.jpg')">
+                    </div>
+                    <div class="p-2">
+                        <p class="font-bold text-center">ELEMENTARY</p>
+                        <a class="w-full flex justify-center" href="#" @click.prevent="open=true">Ver mas</a>
+                        <div x-show="open" class="fixed bg-black bg-opacity-20 inset-0 z-50 flex items-center justify-center p-5">
+                            <div class="w-full md:w-1/2 bg-white p-3 rounded-lg shadow-xl grid grid-cols-1 lg:grid-cols-2" @click.away="open=false">
+                                <div class="w-full pt-full bg-cover bg-center" style="background-image: url('./img/elementary.jpg');"></div>
+                                <div class="p-2 flex flex-col gap-3 justify-between">
+                                    <p class="font-bold text-center">ELEMENTARY</p>
+                                    <p>5 a 5 años 11 meses</p>
+                                    <p>¡Oh! Es nuestro último nivel en preescolar, donde aprendemos muchas cosas para poder disfrutar nuestras vidas, formulamos nuestras propias expectativas, manifestamos nuestros deseos y evidenciamos nuestros avances emocionales, sociales y cognitivos.</p>
+                                    <button class="p-3 text-white bg-blue-500 rounded-lg w-full">Inscripción</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="bg-white rounded-lg overflow-hidden relative" x-data="{open:false}">
+                    <div class=" w-full    pt-full bg-center bg-cover" style="background-image: url('./img/home.jpg')">
+                    </div>
+                    <div class="p-2">
+                        <p class="font-bold text-center">ASESORIA DE TAREAS</p>
+                        <a class="w-full flex justify-center" href="#" @click.prevent="open=true">Ver mas</a>
+                        <div x-show="open" class="fixed bg-black bg-opacity-20 inset-0 z-50 flex items-center justify-center p-5">
+                            <div class="w-full md:w-1/2 bg-white p-3 rounded-lg shadow-xl grid grid-cols-1 lg:grid-cols-2" @click.away="open=false">
+                                <div class="w-full pt-full bg-cover bg-center" style="background-image: url('./img/home.jpg');"></div>
+                                <div class="p-2 flex flex-col gap-3 justify-between">
+                                    <p class="font-bold text-center">ASESORIA DE TAREAS</p>
+                                    <p>Es un servicio diseñado para ayudar y apoyar permanentemente en el desarrollo de las tareas escolares que se presentan a diario en nuestros niños.</p>
+                                    <p>En Little Explorerz contamos con docentes especialistas en la primera infancia, para hacer de las tareas un momento divertido y de aprendizaje.</p>
+                                    <button class="p-3 text-white bg-blue-500 rounded-lg w-full">Inscripción</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="w-full flex flex-col items-center p-5 pt-20" id="cursos_little">
+        <h1 class=" text-white text-4xl font-bold uppercase">Cursos Explorerz</h1>
+        <div class="flex w-full p-3 xl:px-20">
+            <ul class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-5 text-gray-600">
+                <li class="bg-white rounded-lg  lg:col-span-2 grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
+                    <div class=" bg-cover bg-center h-56 lg:h-full" style="background-image: url('./img/basica_primaria.jpg');"></div>
+                    <div class="p-2 flex flex-col justify-between">
+                        <h1 class="font-bold text-2xl">Basica Primaria</h1>
+                        <ul class="list-disc px-10">
+                            <li>Primero</li>
+                            <li>Segundo</li>
+                            <li>Tercero</li>
+                            <li>Cuarto</li>
+                            <li>Quito</li>
+                        </ul>
+                        <button class="bg-blue-500 text-white p-3 rounded-lg">Hacer Inscripción</button>
+                    </div>
+                </li>
+                <li class="bg-white rounded-lg  lg:col-span-2 grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
+                    <div class=" bg-cover bg-center h-56 lg:h-full" style="background-image: url('./img/basica_secundaria.jpeg');"></div>
+                    <div class="p-2 flex flex-col justify-between">
+                        <h1 class="font-bold text-2xl">Basica Secundaria</h1>
+                        <ul class="list-disc px-10">
+                            <li>Sexto</li>
+                            <li>Septimo</li>
+                            <li>Octavo</li>
+                            <li>Noveno</li>
+                            <li>Decimo</li>
+                            <li>Once</li>
+                        </ul>
+                        <button class="bg-blue-500 text-white p-3 rounded-lg">Hacer Inscripción</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="w-full flex flex-col items-center p-5 " id="methods">
+        <h1 class="roboto text-white">Metodos de estudio</h1>
+        <div class="w-full flex flex-col items-center gap-5">
+            <h1 class="font-bold roboto text-6xl">
+                <span class="text-yellow-400">A</span>
+                <span class="text-green-400">B</span>
+                <span class="text-red-400">P</span>
+            </h1>
+            <p class="text-gray-200 p-3 lg:px-20 font-bold">Nuestra metodología de aprendizaje es basada en proyectos (ABP), esta metodología amplia los conocimientos de los alumnos y desarrolla sus habilidades para hacer de ellos personas mas competentes, ya, que, hoy en día no necesitarán una infinidad de información en su memoria, sino que lo que realmente se valorará y les hará ser competentes, será la capacidad de resolver problemas, ser creativos, innovar, tomar decisiones y trabajar en equipo.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 p-5 w-full text-gray-600">
+                <div class="flex flex-col items-center bg-blue-100 p-5 rounded-3xl text-lg relative gap-3 transform -rotate-1 shadow-xl overflow-visible pb-10">
+                    <p class="font-bold">MONTESSORI</p>
+                    <ul class="list-disc pl-5 flex flex-col gap-3 h-96 overflow-hidden">
+                        <li>Mezcla niños y niñas de distintas edades en cada aula, y se trabaja tanto de forma individual como en grupo, para facilitar el intercambio de ideas y la cooperación, y evitar el exceso de competitividad.</li>
+                        <li>Considera que cada niño tiene su propio ritmo de aprendizaje, y que hay que respetarlo.</li>
+                        <li>Juegos al alcance de ellos manejando contextos de la vida real ejemplo la biblioteca, tienda escolar, salón de música, gym etc.</li>
+                        <li>En las aulas los alumnos tienen libertad de movimiento, y libre acceso a los materiales pedagógicos.</li>
+                    </ul>
+                    <div class="absolute font-bold border-8 border-white w-16 h-16 flex items-center justify-center text-4xl rounded-full bg-gradient-to-t to-red-500 from-purple-400 text-white -bottom-4 -right-4 cursor-pointer hover:border-gray-300 hover:text-gray-300">+</div>
+                </div>
+                <div class="flex flex-col items-center bg-blue-100 p-5 rounded-3xl text-lg relative gap-3 transform rotate-1 shadow-xl overflow-visible pb-10">
+                    <p class="font-bold">MÉTODO DOMAN</p>
+                    <ul class="list-disc pl-5 flex flex-col gap-3 h-96 overflow-hidden">
+                        <li>En realidad, no se trata de acelerar artificialmente el desarrollo cognitivo del cerebro de los bebés, sino de evitar frenar o retrasar su capacidad de aprendizaje. Se ha podido comprobar que los alumnos de educación infantil están perfectamente capacitados para aprender a leer (aunque hay que respetar el ritmo de cada niño), y que además disfrutan haciéndolo, lo que no significa que haya que impartirles conocimientos correspondientes a la Educación Primaria. Cuando sepan leer, leerán aquello que verdaderamente les interese y comprendan, y hay infinidad de lecturas adecuadas a su edad. Saber leer, además, no es incompatible con el juego, las relaciones afectivas y la sociabilidad, y la comunicación oral y corporal, tan importantes en esta primera etapa de la infancia.</li>
+                        <li>Con la experiencia y nuestro método de aprendizaje garantizamos el estudio personalizado de cada niño y niña, garantizamos su preparación exitosa para su comienzo en la escuela.</li>
+                    </ul>
+                    <div
+                        class="absolute font-bold border-8 border-white w-16 h-16 flex items-center justify-center text-4xl rounded-full bg-gradient-to-t to-red-500 from-purple-400 text-white -bottom-4 -right-4 cursor-pointer hover:border-gray-300 hover:text-gray-300">
+                        +</div>
+                </div>
+                <div class="flex flex-col items-center bg-blue-100 p-5 rounded-3xl text-lg relative gap-3 transform -rotate-1 shadow-xl overflow-visible pb-10">
+                    <p class="font-bold">MÉTODO WALDORF</p>
+                    <ul class="list-disc pl-5 flex flex-col gap-3 h-96 overflow-hidden">
+                        <li>En la primera infancia el niño imita lo que le rodea y por lo tanto, sus padres y educadores tienen la responsabilidad de crear un entorno que ofrezca al niño suficientes oportunidades para la imitación y para que pueda jugar de forma creativa. El método entiende que las actividades lúdicas constituyen una herramienta indispensable para aprender a dominar el movimiento corporal.</li>
+                        <li>En la escuela primaria, el niño aprende a través de la imaginación, lo que el método Waldorf denomina educar la inteligencia sensible del niño.</li>
+                        <li>Durante la adolescencia, el alumno estudia todas las materias básicas, lo que le permitirá descubrir aquéllas para las que está más dotado o que suscitan su mayor interés y, de este modo, estará listo para elegir su vocación.</li>
+                        <li>Por eso en nuestra institución las extracurriculares son parte del currículo por que le dan la oportunidad a nuestros niños de fortalecer sus habilidades y hacer que lo que decidan hacer lo hagan con excelencia enfocándose en lo que más les gusta. Las lúdicas son parte fundamental en el desarrollo integral del niño y eso lo valoramos.</li>
+                    </ul>
+                    <div class="absolute font-bold border-8 border-white w-16 h-16 flex items-center justify-center text-4xl rounded-full bg-gradient-to-t to-red-500 from-purple-400 text-white -bottom-4 -right-4 cursor-pointer hover:border-gray-300 hover:text-gray-300">
+                        +</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="w-full h-screen flex items-center" id="querys" x-data="querys()">
+        <div class="bg-white w-10/12 h-4/6 lg:w-6/12 mx-auto p-3 rounded-lg flex   text-gray-400 flex-wrap shadow-2xl ">
+            <h1 class="font-bold text-xl text-blue-500 w-full  text-center h-16 ">Pregutas frecuentes:</h1>
+            <ul class="divide-y divide-gray-200 w-1/2 px-5 h-5/6 ">
+                <li @click.prevent="f_quienes()" class="py-2 cursor-pointer hover:text-gray-600">Quienes Somos</li>
+                <li @click.prevent="f_english()" class="py-2 cursor-pointer hover:text-gray-600">¿Porque en ingles?</li>
+                <li @click.prevent="f_ventajas()" class="py-2 cursor-pointer hover:text-gray-600">Ventajas</li>
+                <li @click.prevent="f_courses()" class="py-2 cursor-pointer hover:text-gray-600">Cursos Disponibles</li>
+                <li @click.prevent="f_staff()" class="py-2 cursor-pointer hover:text-gray-600">Staff Explorerz</li>
+            </ul>
+            <div class="w-1/2 px-3" x-show="quienes" >
+                <p class="font-bold">¿Quienes Somos?</p>
+                <p class="p-2">Somos un jardín bilingüe, fundado por docentes extranjeros dejándonos una visión más amplia de la educación a nivel mundial. Funcionamos desde el año 2011, nuestras primeras instalaciones se ubicaron en el barrio Villa del Prado al norte de la ciudad de Bogotá, actualmente nos encontramos ubicados en el barrio Gilmar, con el nombre de LITTLE EXPLORERZ, bajo el número de resolución 19900, emitido por la secretaria de integración.</p>
+            </div>
+            <p class="w-1/2" px-3 x-show="english" class="p-2">El ingles genera multiplicidad de ventajas a nivel cognitivo, socio afectivo, cultural y de proyección laboral que ofrece el uso  de  dos idiomas: inglés y español en el manejo de la información y el uso de herramientas tecnológicas que sirven de apoyo para la adquisición y dominio de los distintos saberes. En la actualidad, los avances de la humanidad en aspectos como la ciencia, la comunicación, la tecnología y la comercialización de productos; requieren de la formación de un hombre con el manejo de dos o más idiomas, siendo el inglés el de mayor importancia debido a que es el idioma universal por excelencia</p>
+            <div class="w-1/2 px-3" x-show="courses">
+                <ul class="list-disc px-5">
+                    <li>Estimulación temprana – Guarderia Baby Care.</li>
+                    <li>Maternal – Walkers – Kindergartens.</li>
+                    <li>Pre-Kinder  – Kinder – Elementary</li>
+                    <li>Asesoria de Tareas – After school/Talleres.</li>
+                    <li>Extracurriculares: Música – Natación – Ajedrrez – Arte.</li>
+                </ul>
+            </div>
+            <div class="w-1/2 px-3" x-show="ventajas">
+                <ul class="list-disc px-10">
+                    <li>Desde nuestros fundadores con amplia experiencia como docente y estudios avanzados.</li>
+                    <li>Somos una empresa inclusiva.</li>
+                    <li>Nuestras pedagogas y personal administrativo están capacitados para cada labor que desempeñan.</li>
+                    <li>Directores pedagógicos con más de 32 años de experiencia en educación.</li>
+                    <li>Nuestras docentes son profesionales en pedagogía infantil, licenciadas en educación, mención prescolar, magister en gerencia empresarial.</li>
+                    <li>Aprendizaje a base de proyectos</li>
+                    <li>Contexto del mundo real.</li>
+                    <li>Enfoque uno a uno.</li>
+                    <li>Cursos vacacionales.</li>
+                    <li>Talleres sensoriales.</li>
+                    <li>Talleres creativos.</li>
+                    <li>Estimulación temprana.</li>
+                    <li>Deportes.</li>
+                    <li>Sala materna.</li>
+                </ul>
+            </div>
+            <div class="w-1/2 px-3" x-show="staff">
+                <ul>
+                    <li>Gerencia y administrativos capacitados en dirección y procesos.</li>
+                    <li>Docentes Inglés</li>
+                    <li>Profesora de yoga certificada.</li>
+                    <li>Profesora de inglés.</li>
+                    <li>Profesores de música.</li>
+                    <li>Técnicos auxiliares.</li>
+                    <li>Personal de aseo.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer class="w-full flex mt-10 py-10 flex-wrap bg-cover px-3"
+        style="background-image: url('./img/suelo-03.png');" id="contacto">
+        <aside class="w-full md:w-1/2 p-3 flex justify-center">
+            <form action="#" method="post"
+                class="flex flex-col w-full xl:w-1/2 gap-3 text-white text-xs p-3  rounded-lg bg-gradient-to-t from-purple-400 via-pink-500 to-red-500 transform -rotate-1">
+                <label for="name">Nombre:</label>
+                <input class="p-2 bg-white bg-opacity-50 outline-none text-gray-600 text-sm" type="text" name="name"
+                    id="name">
+                <label for="phone">Teléfono:</label>
+                <input class="p-2 bg-white bg-opacity-50 outline-none text-gray-600 text-sm" type="tel" name="phone"
+                    id="phone">
+                <label for="email">E-mail:</label>
+                <input class="p-2 bg-white bg-opacity-50 outline-none text-gray-600 text-sm" type="email" name="email"
+                    id="email">
+                <label for="message">Mensaje:</label>
+                <textarea class="p-2 bg-white bg-opacity-50 outline-none text-gray-600 text-sm" name="message"
+                    id="message" cols="30" rows="10"></textarea>
+                <button>Enviar</button>
+            </form>
+        </aside>
+        <aside class="w-full md:w-1/2 p-3 text-white flex flex-wrap bg-blue-300">
+            <div class="w-full">
+                <h1 class="font-bold">INFORMACIÓN GENERAL</h1>
+                <p class="p-1">Rectora: Luz Amparo Alfonso M</p>
+                <p class="p-1">Matrículas: Permanentes</p>
+                <p class="p-1 font-bold">Horario de Atención:</p>
+                <p class="p-1">Lunes a Viernes de 8 am – 5 pm</p>
+
+                <h1 class="font-bold">DIRECCIÓN</h1>
+                <p class="p-1">Calle 161 # 62 – 41</p>
+                <p class="p-1">Bogotá, Colombia</p>
+
+                <h1 class="font-bold">TELÉFONO E EMAIL</h1>
+                <p class="p-1">Tel: +57 (1) 210 1217</p>
+                <p class="p-1">Cel: +57 316 530 8312</p>
+                <p class="p-1">info@explorerzedu.co</p>
+            </div>
+            <div class="w-full">
+                <p class="font-bold">Redes Sociales:</p>
+            </div>
+        </aside>
+    </footer>
+</body>
+<script>
+    function querys () {
+        return{
+            quienes:true,
+            english:false,
+            courses:false,
+            ventajas:false,
+            staff:false,
+            f_quienes(){this.quienes = true, this.english = false, this.courses = false, this.ventajas = false, this.staff = false},
+            f_english(){this.quienes = false, this.english = true, this.courses = false, this.ventajas = false, this.staff = false},
+            f_ventajas(){this.quienes = false, this.english = false, this.courses = false, this.ventajas = true, this.staff = false},
+            f_courses(){this.quienes = false, this.english = false, this.courses = true, this.ventajas = false, this.staff = false},
+            f_staff(){this.quienes = false, this.english = false, this.courses = false, this.ventajas = false, this.staff = true},
+        }
+    }
+</script>
+
+</html>

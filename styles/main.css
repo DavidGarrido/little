@@ -1,0 +1,15 @@
+html{
+    scroll-behavior: smooth;
+}
+.roboto{
+    font-family: 'Roboto';
+}
+.pt-full{
+    padding-top: 100%;
+}
+.bold-title{
+    font-weight: 900;
+}
+.title-shadow{
+    text-shadow: 1px 1px 8px black;
+}
